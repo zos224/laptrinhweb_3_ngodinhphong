@@ -31,6 +31,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <script src="{{ asset('public/backend/js/jquery2.0.3.min.js') }}"></script>
 <script src="{{ asset('public/backend/js/raphael-min.js') }}"></script>
 <script src="{{ asset('public/backend/js/morris.js') }}"></script>
+<script src="{{asset('public/backend/ckeditor/ckeditor.js')}}"></script>
+<script>
+    // Replace the <textarea id="editor1"> with a CKEditor
+    // instance, using default configuration.
+    CKEDITOR.replace('ckeditor');
+    CKEDITOR.replace('ckeditor1');
+    CKEDITOR.replace('ckeditor2');
+    CKEDITOR.replace('ckeditor3');
+    CKEDITOR.replace('id4');
+</script>
 </head>
 <body>
 <section id="container">
@@ -100,6 +110,26 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <ul class="sub">
 						<li><a href="{{URL::to('/add-category-product')}}">Thêm danh mục sản phẩm</a></li>
                         <li><a href="{{URL::to('/all-category-product')}}">Liệt kê danh mục sản phẩm</a></li>
+                    </ul>
+                </li>
+                <li class="sub-menu">
+                    <a href="javascript:;">
+                        <i class="fa fa-book"></i>
+                        <span>Thương hiệu sản phẩm</span>
+                    </a>
+                    <ul class="sub">
+                        <li><a href="{{URL::to('/add-brand-product')}}">Thêm hiệu sản phẩm</a></li>
+                        <li><a href="{{URL::to('/all-brand-product')}}">Liệt kê thương hiệu sản phẩm</a></li>
+                    </ul>
+                </li>
+                <li class="sub-menu">
+                    <a href="javascript:;">
+                        <i class="fa fa-book"></i>
+                        <span>Sản phẩm</span>
+                    </a>
+                    <ul class="sub">
+                        <li><a href="{{URL::to('/add-product')}}">Thêm sản phẩm</a></li>
+                        <li><a href="{{URL::to('/all-product')}}">Liệt kê sản phẩm</a></li> 
                     </ul>
                 </li>
                 <li>

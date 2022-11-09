@@ -6,7 +6,6 @@ use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
-
 class CategoryProductController extends Controller
 {
     public function add_category_product()
@@ -44,4 +43,21 @@ class CategoryProductController extends Controller
         Session::put('message','Thêm danh mục sản phẩm thành công');
         return Redirect::to('add-category-product');
     }
+
+    public function unactive_category_product($category_product_id)
+    {
+        $this->AuthLogin();
+        DB::table('tbl_category_product')->where('category_id',$category_product_id)->update(['category_status'=>0]);
+        Session::put('message','Ẩn danh mục sản phẩm, update thành công');
+        return Redirect::to('all-category-product');
+    }
+
+    public function active_category_product($category_product_id)
+    {
+        $this->AuthLogin();
+        DB::table('tbl_category_product')->where('category_id',$category_product_id)->update(['category_status'=>1]);
+        Session::put('message','Kích hoạt danh mục sản phẩm thành công');
+        return Redirect::to('all-category-product');
+    }       
+       
 }
